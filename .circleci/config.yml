@@ -42,3 +42,16 @@ jobs:
             - run:
                 name: Production Verification
                 command: echo "Performing production-specific verification..."
+
+
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build:
+      - deploy:
+          requires:
+            - build
+          environment: "production"
+
