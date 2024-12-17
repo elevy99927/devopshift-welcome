@@ -10,7 +10,7 @@ parameters:
 jobs:
   build:
     docker:
-      - image: circleci/node:14
+      - image: circleci/node:22
     steps:
       - checkout
       - run:
@@ -26,7 +26,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/node:14
+      - image: circleci/node:22
     parameters:
       environment:
         type: string
